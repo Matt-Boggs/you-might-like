@@ -8,7 +8,7 @@ $(document).ready(()=>{
                 method: "GET",
             }).then( function(res) {
                 console.log(res.quote)
-                kanye.text("'" + res.quote + "'")
+                kanye.text("'" + res.quote.replace(/fuck/g, "@#$!") + "'")
             })
     
             $.ajax({
