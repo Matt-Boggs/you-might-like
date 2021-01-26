@@ -28,9 +28,13 @@ img {
 }
 button {
     font-size: smaller;
+    font-family: 'Patua One', cursive;
+
 }
 .quote, .score {
     font-size: 138%; color: seashell;
+    font-family: 'Patua One', cursive;
+
 }
 .score {
     background-color: rgba(144, 154, 163, 0.63);
