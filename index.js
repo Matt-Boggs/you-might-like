@@ -8,7 +8,7 @@ $(document).ready(()=>{
                 method: "GET",
             }).then( function(res) {
                 console.log(res.quote)
-                kanye.text(res.quote)
+                kanye.text("'" + res.quote + "'")
             })
     
             $.ajax({
@@ -16,7 +16,7 @@ $(document).ready(()=>{
                 method: "GET",
             }).then((res)=>{
                 console.log(res.quote)
-                taylor.text(res.quote)
+                taylor.text("'" + res.quote + "'")
             })
 
         }

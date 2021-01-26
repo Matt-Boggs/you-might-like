@@ -11,26 +11,28 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row score">
             <div class="col-12">Score: Kanye: <span id="kanyeScore">7</span> Taylor: <span id="taylorScore">9</span></div>
         </div>
-        <div class="row">
-            <div class="col-6">
+        <div class="row quote">
+            <div class="col-6 jumbotron tayQ">
                 <p>Taylor:</p>
                 <span class="taylor"></span>
-                <button id="taylorAdd">I'ma let you finish</button>
             </div>
-            <div class="col-6">
+            <div class="col-6 jumbotron yeQ">
                 <p>Kanye:</p>
                 <span class="kanye"></span>
-                <button id="kanyeAdd">You need to calm down</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6 taylorPic">
+        <div class="row images">
+            <div class="col-6 taylorPic img-fluid">
+                <button id="taylorAdd" class="btn btn-primary">Tay all day</button>
+                <br><br>
                 <img src="tayter.jpg" >
             </div>
-            <div class="col-6 kanyePic">
+            <div class="col-6 kanyePic img-fluid">
+                <button id="kanyeAdd" class="btn btn-danger">'Ye all day</button>
+                <br><br>
                 <img src="Marantz-Kanye-VMA-Speech.jpg">
             </div>
         </div>
