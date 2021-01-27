@@ -1,4 +1,15 @@
 $(document).ready(()=>{
+    
+    var kanyeYell = new Audio();
+    kanyeYell.src = "YeSwif.mp3";
+    kanyeYell.volume = .5
+    console.log(kanyeYell)
+    function PlayYe() { kanyeYell.play(); }
+
+    var taylorYell = new Audio();
+    taylorYell.src = "tayswif.mp3";
+    function PlayTay() { taylorYell.play(); }
+
     console.log('check')
     let kanye = $(".kanye")
     let taylor = $(".taylor")
@@ -7,7 +18,6 @@ $(document).ready(()=>{
                 url: 'https://api.kanye.rest',
                 method: "GET",
             }).then( function(res) {
-                console.log(res.quote)
                 kanye.text("'" + res.quote.replace(/fuck/g, "@#$!") + "'")
             })
     
@@ -15,7 +25,6 @@ $(document).ready(()=>{
                 url: 'https://api.taylor.rest',
                 method: "GET",
             }).then((res)=>{
-                console.log(res.quote)
                 taylor.text("'" + res.quote + "'")
             })
 
@@ -23,27 +32,27 @@ $(document).ready(()=>{
         generate()
 
     $("#kanyeAdd").on("click", ()=>{
+        console.log(kanyeYell)
+        PlayYe();
         let val = parseInt($("#kanyeScore").text());
         let newVal = val+1
-        console.log(newVal)
         $("#kanyeScore").text(newVal)
         generate()
     });
     
     $("#taylorAdd").on("click", ()=>{
+        PlayTay();
         let val = parseInt($("#taylorScore").text());
         let newVal = val+1
-        console.log(newVal)
         $("#taylorScore").text(newVal)
         generate()
     })
 
-    
 
 
 
 
-
+PlayTay()
 
 
 })
