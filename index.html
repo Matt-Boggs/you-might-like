@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Modal with instructions pops up on page load -->
     <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -20,18 +21,19 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>Two titans of media, Kanye West and Taylor swift are highly quotable, but which one says it best?</p>
+                    <p>Two titans of media, Kanye West and Taylor Swift are highly quotable, but which one says it best?</p>
                     <p>Click the corresponding button under the tweet you like most, and contact matt.david.boggs@gmail.com with any feedback, or checkout my <a href="https://bit.ly/BoggsPortfolio" target="_blank">Portfolio</a>! </p>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container">
+        <!-- This isn't connected to a database, but these would just be pulled from a single collection with their(kanye & taylor) respective scores -->
         <div class="row score">
             <div class="col-12">Taylor: <span id="taylorScore">9 </span> Kanye: <span id="kanyeScore">7</span></div>
         </div>
 
+        <!-- These are populated by their respective APIs -->
         <div class="row quote">
             <div class="col-6 jumbotron tayQ">
                 <p>Taylor:</p>
@@ -57,8 +59,6 @@
         </div>
     </div>
 
-
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="./index.js"></script>
