@@ -41,10 +41,14 @@ button {
     border-radius: 5px;
 }
 .tayQ {
-    background-color: rgba(172, 20, 20, 0.555);
+    background-color: rgba(70, 12, 12, 0.555);
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 .yeQ {
-    background-color: rgba(65, 105, 225, 0.623);
+    background-color: rgba(12, 32, 92, 0.623);
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 .btn-danger {
     background-color: rgb(70, 12, 12);
