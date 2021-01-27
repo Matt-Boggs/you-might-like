@@ -5,7 +5,7 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    background-image: url("./BG.jfif"); 
+    background-image: url("./assets/BG.jfif"); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,9 +43,14 @@ button {
 .tayQ {
     background-color: rgba(172, 20, 20, 0.555);
 }
-.taylor {
-}
 .yeQ {
     background-color: rgba(65, 105, 225, 0.623);
 }
-
+.btn-danger {
+    background-color: rgb(70, 12, 12);
+    border: 0px;
+}
+.btn-primary {
+    background-color: rgb(12, 32, 92);
+    border: 0px;
+}

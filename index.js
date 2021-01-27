@@ -1,58 +1,54 @@
 $(document).ready(()=>{
+    $("#myModal").modal('show');
     
+    // ==========AUDIO=========================
     var kanyeYell = new Audio();
-    kanyeYell.src = "YeSwif.mp3";
-    kanyeYell.volume = .5
-    console.log(kanyeYell)
-    function PlayYe() { kanyeYell.play(); }
+        kanyeYell.src = "./assets/YeSwif.mp3";
+        // kanye's mp3 is a bit louder, so setting the volume lower here
+        kanyeYell.volume = .2;
+    const PlayYe = ()=> kanyeYell.play(); 
 
     var taylorYell = new Audio();
-    taylorYell.src = "tayswif.mp3";
-    function PlayTay() { taylorYell.play(); }
+        taylorYell.src = "./assets/tayswif.mp3";
+    const PlayTay = ()=> taylorYell.play();
 
-    console.log('check')
-    let kanye = $(".kanye")
-    let taylor = $(".taylor")
-        const generate = ()=>{
+    // =========TWEET API======================
+    let kanye = $(".yeTweet");
+    let taylor = $(".tayTweet");
+    const generate = ()=>{
             $.ajax({
                 url: 'https://api.kanye.rest',
                 method: "GET",
             }).then( function(res) {
-                kanye.text("'" + res.quote.replace(/fuck/g, "@#$!") + "'")
-            })
+                // filtering out the worst offender
+                kanye.text(`"${res.quote.replace(/fuck/g, "@#$!")}"`);
+            });
     
             $.ajax({
                 url: 'https://api.taylor.rest',
                 method: "GET",
             }).then((res)=>{
-                taylor.text("'" + res.quote + "'")
-            })
-
-        }
-        generate()
-
+                taylor.text(`"${res.quote}"`);
+            });
+    }
+    
+    // =========SCORE=========================
     $("#kanyeAdd").on("click", ()=>{
-        console.log(kanyeYell)
         PlayYe();
         let val = parseInt($("#kanyeScore").text());
-        let newVal = val+1
-        $("#kanyeScore").text(newVal)
-        generate()
+        val +=1;
+        $("#kanyeScore").text(val);
+        generate();
     });
     
     $("#taylorAdd").on("click", ()=>{
         PlayTay();
         let val = parseInt($("#taylorScore").text());
-        let newVal = val+1
-        $("#taylorScore").text(newVal)
-        generate()
+        val +=1;
+        $("#taylorScore").text(val);
+        generate();
     })
 
-
-
-
-
-PlayTay()
-
-
+    // call the generate function to display tweets on page load
+    generate();
 })
